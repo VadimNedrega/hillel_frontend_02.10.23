@@ -1,1 +1,1 @@
-# hillel_frontend_02.10.23
+# This repo for homeworks course hillel_frontend_02.10.23
