@@ -125,12 +125,22 @@ while (operation !== null) {
                 operation = confirm(continueWork) ? operation = prompt(startQuestionIncludeHistory) : operation = null;
             } else console.log(unpredictableMagic);
         } else if (operation === "History"){
-            alert("Your operation: \n\n" + operationHistory.join("\n"));
+            operationHistory.length !== 0
+                ? alert("Your operation(s): \n\n" + operationHistory.join("\n"))
+                : alert("you haven't done any operations yet");
+
             operation = confirm(continueWork) ? operation = prompt(startQuestionIncludeHistory) : operation = null;
         }
     } else {
-        alert("I don't recognize your operation. Please choose correct operation like: Sum, Diff, Mult, Div, Sqrt, Sin or Cos");
-        operation = prompt(startQuestion);
+        const wrongOperation = "I don't recognize your operation. Please choose correct operation like: ";
+
+        if (operationHistory.length === 0){
+            alert(wrongOperation + `${functions.slice(0, functions.length -1).join(", ")}`);
+            operation = prompt(startQuestionWithoutHistory);
+        } else {
+            alert(wrongOperation + `${functions.join(", ")}`);
+            operation = prompt(startQuestionIncludeHistory);
+        }
     }
 }
 
