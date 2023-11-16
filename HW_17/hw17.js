@@ -9,17 +9,17 @@ class Student {
         this.birthYear = birthYear;
         this.evaluations = [];
         this.visits = new Array (25);
-
-        this.present = () => {
-            const emptyIndex = this.visits.findIndex(el => el === undefined);
-            emptyIndex !== -1 ? this.visits[emptyIndex] = true : console.log(`${errorVisitsInfo} ${this.visits.length}`);
-        };
-
-        this.absent = () => {
-            const emptyIndex = this.visits.findIndex(el => el === undefined);
-            emptyIndex !== -1 ? this.visits[emptyIndex] = false : console.log(`${errorVisitsInfo} ${this.visits.length}`);
-        };
     }
+
+    present = () => {
+        const emptyIndex = this.visits.findIndex(el => el === undefined);
+        emptyIndex !== -1 ? this.visits[emptyIndex] = true : console.log(`${errorVisitsInfo} ${this.visits.length}`);
+    };
+
+    absent = () => {
+        const emptyIndex = this.visits.findIndex(el => el === undefined);
+        emptyIndex !== -1 ? this.visits[emptyIndex] = false : console.log(`${errorVisitsInfo} ${this.visits.length}`);
+    };
 
     getAge = () => new Date().getFullYear() - this.birthYear;
 

@@ -1,9 +1,9 @@
 // ********** Strict mode **********
 "use strict";
 
-function Human(name, sex) {
+function Human(name, gender) {
     this.name = name;
-    this.sex = sex;
+    this.sex = gender;
 }
 
 function Flat() {
