@@ -5,7 +5,7 @@ class SuperMath{
     znakArray = ["/", "%", "+", "-", "*"];
 
     check(obj) {
-        const confirmAction = confirm(`Do you want to do action "${obj.znak}" with ${obj.X} and ${obj.Y}`);
+        const confirmAction = confirm(`Do you want to do action "${obj.znak}" with ${obj.X} and ${obj.Y}?`);
 
         if (confirmAction){
             const result = this.calculate(obj);
@@ -43,7 +43,7 @@ class SuperMath{
 }
 
 class ObjectForCheck {
-    constructor(znak, X, Y, ) {
+    constructor(znak, X, Y) {
         this.znak = znak;
         this.X = parseFloat(X);
         this.Y = parseFloat(Y);
