@@ -43,7 +43,7 @@ class SuperMath{
 }
 
 class ObjectForCheck {
-    constructor(znak, X, Y, ) {
+    constructor(znak, X, Y) {
         this.znak = znak;
         this.X = parseFloat(X);
         this.Y = parseFloat(Y);
