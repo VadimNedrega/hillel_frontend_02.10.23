@@ -25,7 +25,7 @@ class Hamburger{
         POTATO: {
             PRICE: 15,
             CALORIES: 10
-        },
+        }
     }
 
     static SUPPLEMENT = {
