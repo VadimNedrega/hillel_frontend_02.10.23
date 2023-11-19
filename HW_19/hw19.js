@@ -42,12 +42,10 @@ class SuperMath{
     }
 }
 
-class ObjectForCheck {
-    constructor(znak, X, Y) {
+function ObjectForCheck (znak, X, Y){
         this.znak = znak;
         this.X = parseFloat(X);
         this.Y = parseFloat(Y);
-    }
 }
 
 const superMath = new SuperMath();
