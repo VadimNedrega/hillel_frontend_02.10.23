@@ -56,12 +56,8 @@ class MyLinkedDoubleWayList{
                 return currentValue;
             }
 
-            if (typeof currentValue.value === 'object' && JSON.stringify(currentValue.value) === JSON.stringify(value)) {
-                return {
-                    value: currentValue.value,
-                    prev: currentValue.prev,
-                    next: currentValue.next
-                };
+            if (isValueObjectAndEqualsAnotherObject(currentValue, value)) {
+                return currentValue;
             }
 
             if (currentValue.value === value){
@@ -119,25 +115,39 @@ myLinkedList.add(2);
 myLinkedList.add({name: "third"});
 myLinkedList.add([1, 2, "123"]);
 
-console.log(`myLinkedList:`)
+console.log(`myLinkedList:`);
 console.log(myLinkedList);
 
-console.log(`myLinkedList toArray:`)
+console.log(`myLinkedList toArray:`);
 console.log(myLinkedList.toArray());
 
-console.log(`myLinkedList size:`)
+console.log(`myLinkedList size:`);
 console.log(myLinkedList.size());
 
-console.log(`myLinkedList head:`)
+console.log(`myLinkedList head:`);
 console.log(myLinkedList.getHead());
 
-console.log(`myLinkedList search:`)
+console.log(`myLinkedList search:`);
 console.log(myLinkedList.search([1, 2, "123"]));
-console.log(myLinkedList.search({name: "third"}));
 
-console.log(`myLinkedList after removing:`)
+console.log(`myLinkedList after removing:`);
 myLinkedList.remove({name: "third"});
 console.log(myLinkedList);
 
-console.log(`myLinkedList toArray:`)
+console.log(`myLinkedList toArray:`);
 console.log(myLinkedList.toArray());
+
+const myLinkedList2 = myLinkedList;
+myLinkedList2.add({name: "newObject"});
+console.log(`myLinkedList2 search:`);
+console.log(myLinkedList2.search({name: "newObject"}));
+
+console.log(`myLinkedList2 toArray:`);
+console.log(myLinkedList2.toArray());
+
+const myLinkedList3 = myLinkedList2;
+myLinkedList2.remove("first");
+myLinkedList2.remove(2);
+myLinkedList2.remove([1, 2, "123"]);
+myLinkedList2.remove({name: "newObject"});
+console.log(`myLinkedList3 after removing entry must be empty. It is ${myLinkedList3.size() === 0}`);

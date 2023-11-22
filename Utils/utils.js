@@ -26,3 +26,7 @@ function objectsAreEqual(obj1, obj2) {
 
     return true;
 }
+
+function isValueObjectAndEqualsAnotherObject(currentObj, targetObj) {
+    return typeof targetObj === 'object' && (JSON.stringify(currentObj.value) === JSON.stringify(targetObj))
+}
