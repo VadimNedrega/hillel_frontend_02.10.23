@@ -4,7 +4,7 @@
 const imagesFolder = 'images';
 const images = new Array(9).fill(null);
 
-for (let i = 1; i < 10; i++){
+for (let i = 1; i < images.length +1; i++){
     const imageName = i + ".jpg";
     let randomNumber = Math.floor(Math.random() * images.length);
 
@@ -15,16 +15,23 @@ for (let i = 1; i < 10; i++){
     images[randomNumber] = imageName;
 }
 
+const ul = document.createElement('ul');
+
 images.forEach(imageName => {
     const img = document.createElement('img');
+    const li = document.createElement('li');
     img.src = `${imagesFolder}/${imageName}`;
     img.style.margin = "0 auto";
     img.style.width = '33%';
     img.style.tableLayout = "fixed";
     img.style.height = '300px';
     img.style.boxSizing = 'border-box';
-    document.body.insertAdjacentElement("beforebegin", img);
+
+    li.insertAdjacentElement("afterbegin", img);
+    ul.insertAdjacentElement("afterbegin", li);
 })
+
+document.body.insertAdjacentElement("afterbegin", ul);
 
 
 
