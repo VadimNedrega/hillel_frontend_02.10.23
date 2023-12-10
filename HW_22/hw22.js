@@ -4,7 +4,7 @@
 const imagesFolder = 'images';
 const images = new Array(9).fill(null);
 
-for (let i = 1; i < images.length +1; i++){
+for (let i = 1; i < images.length + 1; i++) {
     const imageName = i + ".jpg";
     let randomNumber = Math.floor(Math.random() * images.length);
 

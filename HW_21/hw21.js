@@ -14,14 +14,19 @@ document.body.insertAdjacentElement("beforebegin", htmlHeadingElement);
 const table = document.createElement("table");
 const cellLength = "350px";
 table.setAttribute("id", "multiplyTable");
-table.style.margin = "0 auto";
-table.style.border = "1.5px solid black";
-table.style.width = cellLength;
-table.style.height = cellLength;
-table.style.tableLayout = "fixed";
-table.style.borderCollapse = "collapse";
-table.style.backgroundColor = "black";
-table.style.color = "white";
+
+const tableStyle = {
+    margin : "0 auto",
+    border : "1.5px solid black",
+    width : cellLength,
+    height : cellLength,
+    tableLayout : "fixed",
+    borderCollapse : "collapse",
+    backgroundColor : "black",
+    color : "white",
+}
+
+Object.keys(tableStyle).forEach(key => table.style[key] = tableStyle[key]);
 
 document.body.insertAdjacentElement("afterbegin", table);
 
