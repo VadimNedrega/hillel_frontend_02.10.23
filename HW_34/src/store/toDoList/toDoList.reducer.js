@@ -9,13 +9,13 @@ export default function reducer(state = initialState, action) {
     case ADD_ACTION: {
       return {
         ...state,
-        actions: [...state.actions, action.payload],
+        actions: [...state.actions, { id: action.payload.id, name: action.payload.name, done: false }],
       };
     }
     case ADD_ACTIONS: {
       return {
         ...state,
-        actions: [...state.actions, ...action.payload],
+        actions: [...state.actions, ...action.payload.map(action => ({ ...action, done: false }))],
       };
     }
     case REMOVE_ACTION: {
@@ -29,7 +29,10 @@ export default function reducer(state = initialState, action) {
         ...state,
         actions: state.actions.map(el => {
           if (el.id === action.payload) {
-            el.name = <span style={{textDecoration: 'line-through', color: "red"}}>{el.name}</span>;
+            return {
+              ...el,
+              done: true,
+            };
           }
           return el;
         }),
