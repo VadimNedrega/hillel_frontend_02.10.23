@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {clearToDoListAction, markToDoAsDone, removeAction, selectActions} from "../../store";
+import {clearToDoListAction, markToDoAsDone, removeAction, selectActions} from "../../service";
 
 export function ToDoList() {
   const { actions } = useSelector(selectActions);

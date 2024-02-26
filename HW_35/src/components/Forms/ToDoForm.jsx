@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { ADD_ACTION_INFO, addToDoAction } from "../../store";
+import { ADD_ACTION_INFO, addToDoAction } from "../../service";
 
 export function ToDoForm() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { ToDoForm, ToDoList } from "./components";
 import { useDispatch } from "react-redux";
-import { fetchActions } from "./store";
+import { fetchActions } from "./service";
 
 export function App() {
   const dispatch = useDispatch();
